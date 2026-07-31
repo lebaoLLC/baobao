@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<title>PRUTWin</title>
+
+<!--
+  =========================================================
+  FILE: index.html — ĐIỂM VÀO DUY NHẤT CỦA APP
+
+  Cách app được lắp ráp:
+  1. Load React + ReactDOM + Babel (CDN) để chạy JSX trực tiếp trên trình duyệt,
+     không cần bước build (npm run build...).
+  2. Load style.css — toàn bộ CSS dùng chung.
+  3. Load lần lượt các file trong /js theo ĐÚNG THỨ TỰ số đầu file
+     (01 -> 09) vì file sau có thể dùng component/const định nghĩa ở file trước.
+     KHÔNG được đổi thứ tự các thẻ <script> bên dưới nếu không sửa lại phần
+     export/import tương ứng.
+
+  Muốn biết sửa màn hình nào thì vào file nào -> xem bảng map đầy đủ
+  trong /js/09_app_router.js (đầu file) hoặc file MAP.md ở thư mục gốc.
+  =========================================================
+-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="root"></div>
+
+<!--
+  Babel-in-browser compile từng file JS riêng biệt vẫn hoạt động bình thường
+  vì tất cả cùng chạy trong global scope (không dùng ES module import/export).
+  Đây là lựa chọn phù hợp cho prototype/demo — không cần Node.js hay bundler.
+-->
+<script type="text/babel" data-presets="react" src="js/00_react_hooks.js"></script>
+<script type="text/babel" data-presets="react" src="js/00_assets_config.js"></script>
+<script type="text/babel" data-presets="react" src="js/01_shared_components.js"></script>
+<script type="text/babel" data-presets="react" src="js/02_login.js"></script>
+<script type="text/babel" data-presets="react" src="js/03_home_before_profile.js"></script>
+<script type="text/babel" data-presets="react" src="js/04_more_tab.js"></script>
+<script type="text/babel" data-presets="react" src="js/05_onboarding_flow.js"></script>
+<script type="text/babel" data-presets="react" src="js/06_profile_after_and_contract.js"></script>
+<script type="text/babel" data-presets="react" src="js/07_home_notifications_and_update.js"></script>
+<script type="text/babel" data-presets="react" src="js/08_chat_ai_flow.js"></script>
+<script type="text/babel" data-presets="react" src="js/09_app_router.js"></script>
+<script type="text/babel" data-presets="react" src="js/10_mount.js"></script>
+
+</body>
+</html>
